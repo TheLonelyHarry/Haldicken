@@ -1,0 +1,13 @@
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+    addToPath: true
+
+- script: |
+    pip install -r requirements.txt
+  displayName: 'Install Python dependencies'
+
+- script: |
+    python serial_tester.py
+  displayName: 'Run serial tester'
